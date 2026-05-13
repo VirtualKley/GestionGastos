@@ -1,4 +1,5 @@
-
+using Domain.DTOs.Auth;
+using Domain.Request.Auth;
 
 namespace Application.Interfaces.Auth;
 
