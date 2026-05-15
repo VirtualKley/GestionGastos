@@ -1,4 +1,5 @@
 using Application.IoC;
+using Application.Middlewares;
 using Infrastructure.IoC;
 using Serilog;
 
@@ -52,6 +53,8 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 var app = builder.Build();
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
