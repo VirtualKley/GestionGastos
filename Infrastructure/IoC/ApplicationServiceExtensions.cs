@@ -27,6 +27,7 @@ public static class ApplicationServiceExtensions
                     .GetSection("JwtSettings")
                     .Get<JwtSettings>()!;
 
+                options.MapInboundClaims = false;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,

@@ -29,9 +29,9 @@ public class AuthController(IAuthService authService) : BaseController
     [Authorize]
     public IActionResult Perfil()
     {
-        var id = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-        var email = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
-        var rol = User.FindFirst(System.Security.Claims.ClaimTypes.Role)?.Value;
+        var id = User.FindFirst("sub")?.Value;
+        var email = User.FindFirst("email")?.Value;
+        var rol = User.FindFirst("role")?.Value;
 
         return Ok(new {id, email, rol});
     }

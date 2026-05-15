@@ -69,7 +69,7 @@ public class AuthService(
             new Claim(JwtRegisteredClaimNames.Sub, usuario.Id.ToString()),
             new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            new Claim(ClaimTypes.Role, usuario.Rol.ToString())
+            new Claim("role", usuario.Rol.ToString())
         };
 
         var key = new SymmetricSecurityKey(
