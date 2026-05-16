@@ -67,4 +67,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
+await app.InitialiseDatabaseAsync();
+
 app.Run();

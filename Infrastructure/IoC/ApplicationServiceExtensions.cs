@@ -43,6 +43,7 @@ public static class ApplicationServiceExtensions
             });
 
         services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<IUsuarioService, UsuarioService>();
 
         return services;
     }

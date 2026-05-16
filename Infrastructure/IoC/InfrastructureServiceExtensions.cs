@@ -1,6 +1,8 @@
 using Domain.Repositorios.Base;
 using Infrastructure.Data.Contexts;
 using Infrastructure.Data.Repositorios.Auth;
+using Infrastructure.Data.Seeders;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,5 +22,10 @@ public static class InfrastructureServiceExtensions
         services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
         return services;
+    }
+
+    public static async Task InitialiseDatabaseAsync(this WebApplication app)
+    {
+        await AdminSeeder.SeedAsync(app.Services);
     }
 }
