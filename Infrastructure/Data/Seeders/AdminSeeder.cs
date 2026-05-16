@@ -37,7 +37,7 @@ public static class AdminSeeder
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123", workFactor: 11),
                 Rol = RolUsuario.Admin,
                 Activo = true,
-                FechaCreacion = DateTime.Now
+                FechaCreacion = DateTime.UtcNow
             };
 
             await context.Usuarios.AddAsync(admin);

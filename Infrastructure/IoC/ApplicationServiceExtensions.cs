@@ -38,7 +38,9 @@ public static class ApplicationServiceExtensions
                     ValidAudience = jwtSettings.Audience,
                     IssuerSigningKey = new SymmetricSecurityKey(
                         Encoding.UTF8.GetBytes(jwtSettings.Key)
-                    )
+                    ),
+                    RoleClaimType = "role"
+                    
                 };
             });
 

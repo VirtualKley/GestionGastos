@@ -4,7 +4,7 @@ namespace Domain.DTOs.Auth;
 
 public class UsuarioDto
 {
-    public int id {get; set;}
+    public int Id {get; set;}
     public string Nombre {get; set;} = string.Empty;
     public string Email {get; set;} = string.Empty;
     public RolUsuario Rol {get; set;}
