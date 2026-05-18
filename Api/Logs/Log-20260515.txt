@@ -246,3 +246,51 @@ FROM usuarios AS u
 2026-05-15 23:46:17.755 -05:00 [INF] Executed endpoint 'Api.Controllers.Auth.UsuarioController.ObtenerTodos (Api)'
 2026-05-15 23:46:17.793 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Usuario - 200 null application/json; charset=utf-8 2250.4492ms
 2026-05-15 23:46:32.068 -05:00 [INF] Application is shutting down...
+2026-05-15 23:49:24.234 -05:00 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM usuarios AS u
+    WHERE u."Rol" = 1)
+2026-05-15 23:49:24.682 -05:00 [INF] Admin ya existe - seeder omitido
+2026-05-15 23:49:24.760 -05:00 [INF] User profile is available. Using '/home/mrkley/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-05-15 23:49:25.012 -05:00 [INF] Now listening on: http://localhost:5150
+2026-05-15 23:49:25.014 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-15 23:49:25.015 -05:00 [INF] Hosting environment: Development
+2026-05-15 23:49:25.016 -05:00 [INF] Content root path: /home/mrkley/Documentos/Projects/CSharp/GestionGastos/Api
+2026-05-15 23:49:35.951 -05:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5150/api/Usuario/1/deshabilitar - null 0
+2026-05-15 23:49:36.149 -05:00 [WRN] Failed to determine the https port for redirect.
+2026-05-15 23:49:36.620 -05:00 [INF] Executing endpoint 'Api.Controllers.Auth.UsuarioController.Deshabilitar (Api)'
+2026-05-15 23:49:36.730 -05:00 [INF] Route matched with {action = "Deshabilitar", controller = "Usuario"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Deshabilitar(Int32) on controller Api.Controllers.Auth.UsuarioController (Api).
+2026-05-15 23:49:37.193 -05:00 [INF] Executed DbCommand (57ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Activo", u."Email", u."FechaCreacion", u."Nombre", u."PasswordHash", u."Rol"
+FROM usuarios AS u
+WHERE u."Id" = @__p_0
+LIMIT 1
+2026-05-15 23:49:37.932 -05:00 [INF] Executed DbCommand (55ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?', @p2='?' (DbType = DateTime), @p3='?', @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+UPDATE usuarios SET "Activo" = @p0, "Email" = @p1, "FechaCreacion" = @p2, "Nombre" = @p3, "PasswordHash" = @p4, "Rol" = @p5
+WHERE "Id" = @p6;
+2026-05-15 23:49:38.041 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-15 23:49:38.512 -05:00 [INF] Executed action Api.Controllers.Auth.UsuarioController.Deshabilitar (Api) in 1758.1392ms
+2026-05-15 23:49:38.526 -05:00 [INF] Executed endpoint 'Api.Controllers.Auth.UsuarioController.Deshabilitar (Api)'
+2026-05-15 23:49:38.575 -05:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5150/api/Usuario/1/deshabilitar - 200 null application/json; charset=utf-8 2633.7207ms
+2026-05-15 23:49:44.505 -05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5150/api/Usuario - null null
+2026-05-15 23:49:44.541 -05:00 [INF] Executing endpoint 'Api.Controllers.Auth.UsuarioController.ObtenerTodos (Api)'
+2026-05-15 23:49:44.565 -05:00 [INF] Route matched with {action = "ObtenerTodos", controller = "Usuario"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ObtenerTodos() on controller Api.Controllers.Auth.UsuarioController (Api).
+2026-05-15 23:49:44.952 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Activo", u."Email", u."FechaCreacion", u."Nombre", u."PasswordHash", u."Rol"
+FROM usuarios AS u
+2026-05-15 23:49:45.338 -05:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[Domain.Entidades.Auth.Usuario, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[Domain.DTOs.Auth.UsuarioDto, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-15 23:49:45.530 -05:00 [INF] Executed action Api.Controllers.Auth.UsuarioController.ObtenerTodos (Api) in 963.0348ms
+2026-05-15 23:49:45.531 -05:00 [INF] Executed endpoint 'Api.Controllers.Auth.UsuarioController.ObtenerTodos (Api)'
+2026-05-15 23:49:45.533 -05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5150/api/Usuario - 200 null application/json; charset=utf-8 1028.1534ms
+2026-05-15 23:50:55.886 -05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5150/api/Auth/login - application/json 65
+2026-05-15 23:50:55.900 -05:00 [INF] Executing endpoint 'Api.Controllers.Auth.AuthController.Login (Api)'
+2026-05-15 23:50:55.917 -05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Domain.Request.Auth.LoginRequest) on controller Api.Controllers.Auth.AuthController (Api).
+2026-05-15 23:50:56.071 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Activo", u."Email", u."FechaCreacion", u."Nombre", u."PasswordHash", u."Rol"
+FROM usuarios AS u
+WHERE u."Email" = @__email_0
+LIMIT 1
+2026-05-15 23:50:56.079 -05:00 [INF] Executed action Api.Controllers.Auth.AuthController.Login (Api) in 160.8855ms
+2026-05-15 23:50:56.081 -05:00 [INF] Executed endpoint 'Api.Controllers.Auth.AuthController.Login (Api)'
+2026-05-15 23:50:56.113 -05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5150/api/Auth/login - 401 null application/json 226.213ms

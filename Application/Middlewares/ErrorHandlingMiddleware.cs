@@ -30,6 +30,14 @@ public class ErrorHandlingMiddleware(RequestDelegate next)
                 ex.Message
             );    
         }
+        catch(KeyNotFoundException ex)
+        {
+            await HandleExceptionAsync(
+                context,
+                HttpStatusCode.Unauthorized,
+                ex.Message
+            );    
+        }
         catch
         {
             await HandleExceptionAsync(
