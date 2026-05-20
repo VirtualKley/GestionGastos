@@ -1,0 +1,12 @@
+2026-05-19 21:32:33.019 -05:00 [INF] Executed DbCommand (133ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM usuarios AS u
+    WHERE u."Rol" = 1)
+2026-05-19 21:32:33.418 -05:00 [INF] Admin ya existe - seeder omitido
+2026-05-19 21:32:33.495 -05:00 [INF] User profile is available. Using '/home/mrkley/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-05-19 21:32:33.778 -05:00 [INF] Now listening on: http://localhost:5150
+2026-05-19 21:32:33.779 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-19 21:32:33.780 -05:00 [INF] Hosting environment: Development
+2026-05-19 21:32:33.781 -05:00 [INF] Content root path: /home/mrkley/Documentos/Projects/CSharp/GestionGastos/Api
+2026-05-19 21:33:17.637 -05:00 [INF] Application is shutting down...
