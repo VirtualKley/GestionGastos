@@ -1,4 +1,6 @@
 
+using Domain.Entidades.Auth;
+using Domain.Entidades.Base;
 using Domain.Repositorios.Base;
 using Infrastructure.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
@@ -34,7 +36,15 @@ public class RepositorioBase<T> : IRepositorioBase<T> where T : class
     }
     public async Task EliminarAsync(T entidad)
     {
-        _dbSet.Remove(entidad);
+        if (entidad is BaseEntity baseEntity)
+        {
+            baseEntity.Activo = false;
+            baseEntity.FechaEliminacion = DateTime.UtcNow;
+        } else if (entidad is Usuario usuario)
+        {
+            usuario.Activo = false;
+        }
+        _dbSet.Update(entidad);
         await _context.SaveChangesAsync();
     }
 }

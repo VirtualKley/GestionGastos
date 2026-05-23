@@ -1,6 +1,8 @@
 using Domain.Repositorios.Base;
+using Domain.Repositorios.Catalog;
 using Infrastructure.Data.Contexts;
 using Infrastructure.Data.Repositorios.Auth;
+using Infrastructure.Data.Repositorios.Catalogs;
 using Infrastructure.Data.Seeders;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -20,6 +22,7 @@ public static class InfrastructureServiceExtensions
             options.UseNpgsql(configuration.GetConnectionString("PostgreSQL")));
 
         services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+        services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
 
         return services;
     }

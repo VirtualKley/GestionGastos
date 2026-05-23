@@ -1,6 +1,8 @@
 using System.Text;
 using Application.Interfaces.Auth;
+using Application.Interfaces.Catalog;
 using Application.Servicios.Auth;
+using Application.Servicios.Catalog;
 using Domain.Configuraciones;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -46,6 +48,7 @@ public static class ApplicationServiceExtensions
 
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IUsuarioService, UsuarioService>();
+        services.AddScoped<ICategoriaService, CategoriaService>();
 
         return services;
     }
