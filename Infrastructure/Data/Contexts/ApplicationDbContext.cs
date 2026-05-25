@@ -1,4 +1,5 @@
 using Domain.Entidades.Auth;
+using Domain.Entidades.Card;
 using Domain.Entidades.Catalog;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ namespace Infrastructure.Data.Contexts
 
         public DbSet<Usuario> Usuarios {get; set;}
         public DbSet<Categoria> Categorias {get; set;}
+        public DbSet<TarjetaCredito> TarjetasCredrito {get; set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,6 +38,14 @@ namespace Infrastructure.Data.Contexts
                 entity.Property(e => e.Icono).IsRequired().HasMaxLength(30);
                 entity.Property(e => e.ColorHex).IsRequired().HasMaxLength(30);
                 entity.Property(e => e.Icono).IsRequired().HasMaxLength(30);
+            });
+
+            modelBuilder.Entity<TarjetaCredito>(entity =>
+            {
+                entity.ToTable("tarjetas_credito");
+                entity.HasKey(t => t.Id);
+                entity.Property(t => t.UltimoCuatroDigitos).HasMaxLength(4);
+                entity.Property(t => t.LimiteCredito).HasPrecision(12, 2);
             });
         } 
     }

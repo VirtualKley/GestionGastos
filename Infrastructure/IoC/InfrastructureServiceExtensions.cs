@@ -1,7 +1,9 @@
 using Domain.Repositorios.Base;
+using Domain.Repositorios.Card;
 using Domain.Repositorios.Catalog;
 using Infrastructure.Data.Contexts;
 using Infrastructure.Data.Repositorios.Auth;
+using Infrastructure.Data.Repositorios.Card;
 using Infrastructure.Data.Repositorios.Catalogs;
 using Infrastructure.Data.Seeders;
 using Microsoft.AspNetCore.Builder;
@@ -23,6 +25,7 @@ public static class InfrastructureServiceExtensions
 
         services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
         services.AddScoped<ICategoriaRepositorio, CategoriaRepositorio>();
+        services.AddScoped<ITarjetaCreditoRepositorio, TarjetaCreditoRepositorio>();
 
         return services;
     }
