@@ -1,7 +1,9 @@
 using System.Text;
 using Application.Interfaces.Auth;
+using Application.Interfaces.Card;
 using Application.Interfaces.Catalog;
 using Application.Servicios.Auth;
+using Application.Servicios.Card;
 using Application.Servicios.Catalog;
 using Domain.Configuraciones;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -49,6 +51,7 @@ public static class ApplicationServiceExtensions
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IUsuarioService, UsuarioService>();
         services.AddScoped<ICategoriaService, CategoriaService>();
+        services.AddScoped<ITarjetaCreditoService, TarjetaCreditoService>();
 
         return services;
     }
