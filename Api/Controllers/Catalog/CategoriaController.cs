@@ -9,9 +9,6 @@ public class CategoriaController(ICategoriaService categoriaService) : BaseContr
 {
     private readonly ICategoriaService _categoriaService = categoriaService;
 
-    private int GetUsuario() =>
-        int.Parse(User.FindFirst("sub")!.Value); //Obtension del id del usuario desde que se encuentra en el jwt
-
     [HttpGet]
     [Authorize]
     public async Task<IActionResult> ObtenerCategorias()
