@@ -6,4 +6,5 @@ namespace Application.Interfaces.Catalog;
 
 public interface ICategoriaService : IBaseService<CategoriaDto, CategoriaRequest>
 {
+    Task<int> ObtenerCantidadCatgoriaAsync(int usuarioId);
 }

@@ -5,5 +5,5 @@ namespace Domain.Repositorios.Catalog;
 
 public interface ICategoriaRepositorio : IRepositorioUsuarioBase<Categoria>
 {
-    
+    Task<int> ObtenerCantidadCategorias(int usuarioId);
 }

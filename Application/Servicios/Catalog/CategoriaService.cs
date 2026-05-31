@@ -41,6 +41,12 @@ public class CategoriaService(ICategoriaRepositorio categoriaRepositorio) : ICat
         return categoria.Adapt<CategoriaDto>();
     }
 
+    public async Task<int> ObtenerCantidadCatgoriaAsync(int usuarioId)
+    {
+        var categorias = await _categoriaRepositorio.ObtenerCantidadCategorias(usuarioId);
+        return categorias;
+    }
+
     public async Task<CategoriaDto> ObtenerPorIdAsync(int id, int usuarioId)
     {
         var categoria = await ObtenerYValidarAsync(id, usuarioId);

@@ -17,6 +17,14 @@ public class CategoriaController(ICategoriaService categoriaService) : BaseContr
         return Ok(result);
     }
 
+    [HttpGet("cantidad")]
+    [Authorize]
+    public async Task<IActionResult> ObtenerCantidadCategorias()
+    {
+        var result = await _categoriaService.ObtenerCantidadCatgoriaAsync(GetUsuario());
+        return Ok(result);
+    }
+
     [HttpGet("{id}")]
     [Authorize]
     public async Task<IActionResult> ObtenerPorId(int id)
